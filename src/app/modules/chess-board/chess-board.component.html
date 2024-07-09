@@ -1,0 +1,44 @@
+<div class="chess-board" [ngClass]="{'rotated': flipMode}">
+  @for (row of chessBoardView; track $index; let x = $index) {
+    <div class="row">
+      @for (piece of row; track $index; let y = $index) {
+        <div class="square" 
+             [ngClass]="{
+               'dark': isSquareDark(x, y),
+               'light': !isSquareDark(x, y),
+               'selected-square': isSquareSelected(x, y),
+               'last-move': isSquareLastMove(x, y),
+               'king-in-check': isSquareChecked(x, y),
+               'promotion-square': isSquarePromotionSquare(x,y)
+             }"
+             (click)="move(x, y)">
+          <div [ngClass]="{'safe-square': isSquareSafeForSelectedPiece(x, y)}"></div>
+          @if (piece) {
+            <img [src]="pieceImagePaths[piece]" [alt]="piece" class="piece"
+            [ngClass]="{'rotated': flipMode}">
+          }
+        </div>
+      }
+    </div>
+  }
+</div>
+
+
+<button (click) = "flipBoard()">Flip</button>
+
+@if (gameOverMessage) {
+  <h2 class="game-over-message">
+    {{gameOverMessage}}
+  </h2>
+}
+
+@if (isPromotionActive) {
+  <div class="promotion-dialog">
+    @for (piece of promotionPieces(); track piece) {
+      <img [src]="pieceImagePaths[piece]" (click)="promotePiece(piece)">
+    }
+    <span class="close-promotion-dialog" (click)="closePawnPromotionDialog()">
+      &times;
+    </span>
+  </div>
+}
