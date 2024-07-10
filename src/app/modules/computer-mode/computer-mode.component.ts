@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ChessBoardComponent } from '../chess-board/chess-board.component';
 
 @Component({
   selector: 'app-computer-mode',
-  templateUrl: './computer-mode.component.html',
-  styleUrl: './computer-mode.component.css'
+  templateUrl: '../chess-board/chess-board.component.html',
+  styleUrl: '../chess-board/chess-board.component.css'
 })
-export class ComputerModeComponent {
+export class ComputerModeComponent  extends ChessBoardComponent{
 
 }
