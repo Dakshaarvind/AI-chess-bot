@@ -6,6 +6,7 @@ import { SelectedSquare } from './models';
 
 @Component({
   selector: 'app-chess-board',
+  standalone: true,
   templateUrl: './chess-board.component.html',
   styleUrl: './chess-board.component.css'
 })
