@@ -3,10 +3,12 @@ import { ChessBoard } from '../../chess-logic/chess-board';
 import { CheckState, Color, Coords, FENChar, LastMove, SafeSquares, pieceImagePaths } from '../../chess-logic/models';
 import { NgClass } from '@angular/common';
 import { SelectedSquare } from './models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chess-board',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './chess-board.component.html',
   styleUrl: './chess-board.component.css'
 })
