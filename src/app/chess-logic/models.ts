@@ -1,45 +1,55 @@
 import { Piece } from "./pieces/piece";
 
-export enum Color{
+export enum Color {
     White,
     Black
 }
 
-export type Coords ={
-    x:number;
-    y:number;
+export type Coords = {
+    x: number;
+    y: number;
 }
- export enum FENChar{
-    WhitePawn="P",
-    WhiteKnight="N",
-    WhiteBishop="B",
-    WhiteRook="R",
-    WhiteQueen="Q",
-    WhiteKing="K",
-    BlackPawn="p",
-    BlackKnight= "n",
+
+export enum FENChar {
+    WhitePawn = "P",
+    WhiteKnight = "N",
+    WhiteBishop = "B",
+    WhiteRook = "R",
+    WhiteQueen = "Q",
+    WhiteKing = "K",
+    BlackPawn = "p",
+    BlackKnight = "n",
     BlackBishop = "b",
     BlackRook = "r",
     BlackQueen = "q",
-    BlackKing = "k",
- }
-
-export const pieceImagePaths: Readonly<Record<FENChar, string>> = {
-    [FENChar.WhitePawn]: "/assets/white pawn.svg",
-    [FENChar.WhiteKnight]: "/assets/white knight.svg",
-    [FENChar.WhiteBishop]: "/assets/white bishop.svg",
-    [FENChar.WhiteRook]: "/assets/white rook.svg",
-    [FENChar.WhiteQueen]: "/assets/white queen.svg",
-    [FENChar.WhiteKing]: "/assets/white king.svg",
-    [FENChar.BlackPawn]: "/assets/black pawn.svg",
-    [FENChar.BlackKnight]: "/assets/black knight.svg",
-    [FENChar.BlackBishop]: "/assets/black bishop.svg",
-    [FENChar.BlackRook]: "/assets/black rook.svg",
-    [FENChar.BlackQueen]: "/assets/black queen.svg",
-    [FENChar.BlackKing]: "/assets/black king.svg"
+    BlackKing = "k"
 }
 
-export type SafeSquares = Map< string, Coords[]>;
+export const pieceImagePaths: Readonly<Record<FENChar, string>> = {
+    [FENChar.WhitePawn]: "assets/pieces/white pawn.svg",
+    [FENChar.WhiteKnight]: "assets/pieces/white knight.svg",
+    [FENChar.WhiteBishop]: "assets/pieces/white bishop.svg",
+    [FENChar.WhiteRook]: "assets/pieces/white rook.svg",
+    [FENChar.WhiteQueen]: "assets/pieces/white queen.svg",
+    [FENChar.WhiteKing]: "assets/pieces/white king.svg",
+    [FENChar.BlackPawn]: "assets/pieces/black pawn.svg",
+    [FENChar.BlackKnight]: "assets/pieces/black knight.svg",
+    [FENChar.BlackBishop]: "assets/pieces/black bishop.svg",
+    [FENChar.BlackRook]: "assets/pieces/black rook.svg",
+    [FENChar.BlackQueen]: "assets/pieces/black queen.svg",
+    [FENChar.BlackKing]: "assets/pieces/black king.svg"
+}
+
+export type SafeSquares = Map<string, Coords[]>;
+
+export enum MoveType {
+    Capture,
+    Castling,
+    Promotion,
+    Check,
+    CheckMate,
+    BasicMove
+}
 
 export type LastMove = {
     piece: Piece;
@@ -47,10 +57,11 @@ export type LastMove = {
     prevY: number;
     currX: number;
     currY: number;
+    moveType: Set<MoveType>;
 }
 
-type KingChecked ={
-    isInCheck : true;
+type KingChecked = {
+    isInCheck: true;
     x: number;
     y: number;
 }
@@ -60,3 +71,11 @@ type KingNotChecked = {
 }
 
 export type CheckState = KingChecked | KingNotChecked;
+
+export type MoveList = ([string, string?])[];
+
+export type GameHistory = {
+    lastMove: LastMove | undefined;
+    checkState: CheckState;
+    board: (FENChar | null)[][];
+}[];

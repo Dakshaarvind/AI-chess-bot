@@ -1,17 +1,17 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ChessMove, ComputerConfiguration, stockfishLevels, StockfishQueryParams, StockfishResponse } from './models';
+import { ChessMove, ComputerConfiguration, StockfishQueryParams, StockfishResponse, stockfishLevels } from './models';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
-import { Color, FENChar } from '../../chess-logic/models';
+import { Color, FENChar } from 'src/app/chess-logic/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StockfishService {
-  private readonly api: string = "https://stockfish.online/api/s/v2.php"
+  private readonly api: string = "https://stockfish.online/api/s/v2.php";
 
   public computerConfiguration$ = new BehaviorSubject<ComputerConfiguration>({ color: Color.Black, level: 1 });
-  
+
   constructor(private http: HttpClient) { }
 
   private convertColumnLetterToYCoord(string: string): number {
