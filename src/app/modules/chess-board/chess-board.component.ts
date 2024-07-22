@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ChessBoard } from 'src/app/chess-logic/chess-board';
-import { CheckState, Color, Coords, FENChar, GameHistory, LastMove, MoveList, MoveType, SafeSquares, pieceImagePaths } from 'src/app/chess-logic/models';
+import { ChessBoard } from '../../chess-logic/chess-board';
+import { CheckState, Color, Coords, FENChar, GameHistory, LastMove, MoveList, MoveType, SafeSquares, pieceImagePaths } from '../../chess-logic/models';
 import { SelectedSquare } from './models';
 import { ChessBoardService } from './chess-board.service';
 import { Subscription, filter, fromEvent, tap } from 'rxjs';
-import { FENConverter } from 'src/app/chess-logic/FENConverter';
+import { FenConverter } from '../../chess-logic/FENConverter';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chess-board',
@@ -72,7 +73,7 @@ export class ChessBoardComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
-    this.chessBoardService.chessBoardState$.next(FENConverter.initalPosition);
+    this.chessBoardService.chessBoardState$.next(FenConverter.initalPosition);
   }
 
   public flipBoard(): void {

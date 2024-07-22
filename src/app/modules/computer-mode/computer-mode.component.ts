@@ -4,11 +4,15 @@ import { StockfishService } from './stockfish.service';
 import { ChessBoardService } from '../chess-board/chess-board.service';
 import { Subscription, firstValueFrom } from 'rxjs';
 import { Color } from 'src/app/chess-logic/models';
+import { CommonModule } from '@angular/common';
+import { MoveListComponent } from '../movelist/movelist.component';
 
 @Component({
   selector: 'app-computer-mode',
   templateUrl: '../chess-board/chess-board.component.html',
-  styleUrls: ['../chess-board/chess-board.component.css']
+  styleUrls: ['../chess-board/chess-board.component.css'],
+  standalone: true,
+  imports: [CommonModule, MoveListComponent, ChessBoardComponent]
 })
 export class ComputerModeComponent extends ChessBoardComponent implements OnInit, OnDestroy {
   private computerSubscriptions$ = new Subscription();
