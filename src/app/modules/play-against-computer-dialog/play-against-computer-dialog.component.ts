@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { StockfishService } from '../computer-mode/stockfish.service';
-import { Color } from 'src/app/chess-logic/models';
+import { Color } from '../../chess-logic/models';
 import { Router } from '@angular/router';
 
 @Component({

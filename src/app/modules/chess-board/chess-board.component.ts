@@ -6,11 +6,14 @@ import { ChessBoardService } from './chess-board.service';
 import { Subscription, filter, fromEvent, tap } from 'rxjs';
 import { FenConverter } from '../../chess-logic/FENConverter';
 import { CommonModule } from '@angular/common';
+import { MoveListComponent } from '../movelist/movelist.component';
 
 @Component({
   selector: 'app-chess-board',
   templateUrl: './chess-board.component.html',
-  styleUrls: ['./chess-board.component.css']
+  styleUrls: ['./chess-board.component.css'],
+  standalone: true,
+  imports: [CommonModule, MoveListComponent]
 })
 export class ChessBoardComponent implements OnInit, OnDestroy {
   public pieceImagePaths = pieceImagePaths;

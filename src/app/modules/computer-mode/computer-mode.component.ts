@@ -3,7 +3,7 @@ import { ChessBoardComponent } from '../chess-board/chess-board.component';
 import { StockfishService } from './stockfish.service';
 import { ChessBoardService } from '../chess-board/chess-board.service';
 import { Subscription, firstValueFrom } from 'rxjs';
-import { Color } from 'src/app/chess-logic/models';
+import { Color } from '../../chess-logic/models';
 import { CommonModule } from '@angular/common';
 import { MoveListComponent } from '../movelist/movelist.component';
 

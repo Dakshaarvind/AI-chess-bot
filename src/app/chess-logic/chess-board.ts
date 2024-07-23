@@ -1,5 +1,5 @@
 import { columns } from "../modules/chess-board/models";
-import { FENConverter } from "./FENConverter";
+import { FenConverter } from "./FENConverter";
 import { CheckState, Color, Coords, FENChar, GameHistory, LastMove, MoveList, MoveType, SafeSquares } from "./models";
 import { Bishop } from "./pieces/bishop";
 import { King } from "./pieces/king";
@@ -25,8 +25,8 @@ export class ChessBoard {
     private threeFoldRepetitionDictionary = new Map<string, number>();
     private threeFoldRepetitionFlag: boolean = false;
 
-    private _boardAsFEN: string = FENConverter.initalPosition;
-    private FENConverter = new FENConverter();
+    private _boardAsFEN: string = FenConverter.initalPosition;
+    private FENConverter = new FenConverter();
 
     private _moveList: MoveList = [];
     private _gameHistory: GameHistory;
