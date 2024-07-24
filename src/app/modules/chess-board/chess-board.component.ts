@@ -96,6 +96,13 @@ export class ChessBoardComponent implements OnInit, OnDestroy {
     return this.pieceSafeSquares.some(coords => coords.x === x && coords.y === y);
   }
 
+  public getImagePath(piece: FENChar | null): string {
+    if (piece && piece in pieceImagePaths) {
+      return pieceImagePaths[piece];
+    }
+    return ''; // or a default image path
+  }
+
   public isSquareLastMove(x: number, y: number): boolean {
     if (!this.lastMove) return false;
     const { prevX, prevY, currX, currY } = this.lastMove;
