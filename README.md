@@ -18,7 +18,7 @@ AI Chess Bot is designed for players of all levels. Whether you're casually play
 ---
 
 ## 🚀 Features  
-- 🤖 **AI-Powered Matches** (adjustable difficulty if implemented)  
+- 🤖 **AI-Powered Matches** (adjustable difficulty)  
 - 🧠 **Match Review System**  
 - 🧮 **Score Tracking** for players  
 - 🎮 **Multiple Game Modes:**  
