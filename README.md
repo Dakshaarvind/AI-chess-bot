@@ -1,27 +1,31 @@
-# ChessGame
+# ♟️ AI Chess Bot  
+**Play chess against friends, AI, or even yourself — with built-in scoring and game reviews.**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+AI Chess Bot is a modern web-based chess application built with **Angular** that lets players compete against each other, test their skills against an AI opponent, or play self-practice matches. The app tracks wins/losses, analyzes games, and provides a clear, interactive chess experience.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ⭐ Overview  
+AI Chess Bot is designed for players of all levels. Whether you're casually playing with a friend or testing yourself against an AI engine, the app provides a smooth experience with real-time movement, tracking, and insights.
 
-## Code scaffolding
+**You can:**
+- Play **Player vs Player**
+- Play **Player vs AI**
+- Play **Self vs Self** mode for testing openings or practicing strategies
+- Track your **overall score & match history**
+- View **basic game reviews** at the end of each match
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🚀 Features  
+- 🤖 **AI-Powered Matches** (adjustable difficulty if implemented)  
+- 🧠 **Match Review System**  
+- 🧮 **Score Tracking** for players  
+- 🎮 **Multiple Game Modes:**  
+  - Human vs Human  
+  - Human vs AI  
+  - Human (both sides)  
+- 🖥️ **Clean Angular UI**  
+- 🔄 **Move validation** & legal-move highlighting  
+- ♟️ **Interactive chessboard with drag-and-drop pieces**  
+- 📱 **Responsive design for desktop & mobile**  
