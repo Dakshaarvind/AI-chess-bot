@@ -1,5 +1,5 @@
 # ♟️ AI Chess Bot  
-**Play chess against friends, AI, or even yourself — with built-in scoring and game reviews.**
+**Play chess against friends, AI, or even yourself with built-in scoring and game reviews.**
 
 AI Chess Bot is a modern web-based chess application built with **Angular** that lets players compete against each other, test their skills against an AI opponent, or play self-practice matches. The app tracks wins/losses, analyzes games, and provides a clear, interactive chess experience.
 
